@@ -65,7 +65,7 @@ export default async function CourseVideosPage({
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Curso no encontrado o sin acceso</h1>
           <Link 
             href="/mis-cursos"
-            className="text-blue-600 hover:text-blue-800"
+            className="text-[#9810FA] hover:text-[#7e0ccf]"
           >
             Volver a Mis Cursos
           </Link>
@@ -90,7 +90,7 @@ export default async function CourseVideosPage({
   </div>
   <Link 
     href="/mis-cursos"
-    className="text-blue-600 hover:text-blue-700 font-medium whitespace-nowrap"
+    className="text-[#9810FA] hover:text-[#7e0ccf]"
   >
     ← Volver a Mis Cursos
   </Link>

@@ -59,7 +59,8 @@ export default async function MisCursosPage() {
             <div className="flex items-center space-x-4">
               <Link 
                 href="/courses"
-                className="text-blue-600 hover:text-blue-700 font-medium"
+                className="text-[#9810FA] hover:text-[#7e0ccf] font-medium"
+
               >
                 Catálogo de Cursos
               </Link>
@@ -81,7 +82,7 @@ export default async function MisCursosPage() {
             </p>
             <Link
               href="/courses"
-              className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200"
+className="bg-[#9810FA] hover:bg-[#7e0ccf] text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200"
             >
               Explorar Cursos Disponibles
             </Link>
@@ -145,7 +146,7 @@ export default async function MisCursosPage() {
                       {/* BOTÓN ACTUALIZADO - AHORA FUNCIONAL */}
                       <Link 
                         href={`/mis-cursos/${userCourse.course.id}`}
-                        className="block w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg text-center transition-colors duration-200"
+className="block w-full bg-[#9810FA] hover:bg-[#7e0ccf] text-white font-medium py-2 px-4 rounded-lg text-center transition-colors duration-200"
                       >
                         Ver Videos del Curso
                       </Link>

@@ -84,7 +84,7 @@ export default async function CoursesPage() {
                       <div className="text-sm text-gray-500">
                         {course.videos.length} {course.videos.length === 1 ? 'video' : 'videos'}
                       </div>
-                      <div className="text-2xl font-bold text-blue-600">
+                      <div className="text-2xl font-bold text-[#E12AFB]"> 
                         ${course.price}
                       </div>
                     </div>
@@ -92,7 +92,7 @@ export default async function CoursesPage() {
                     {/* Botón de compra */}
                     <Link
                       href={`/courses/${course.id}`}
-                      className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 text-center block"
+                      className="w-full bg-[#9810FA] hover:bg-[#7e0ccf] text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 text-center block"
                     >
                       Ver Detalles del Curso
                     </Link>

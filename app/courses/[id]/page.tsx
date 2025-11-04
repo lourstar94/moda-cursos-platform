@@ -58,27 +58,19 @@ export default async function CourseDetailPage({
           <div className="flex justify-between items-center h-16">
             <Link
               href="/courses"
-              className="text-blue-600 hover:text-blue-700 font-medium"
+              className="text-[#9810FA] hover:text-[#7e0ccf] font-medium"
             >
               ← Volver al catálogo
             </Link>
-            <div className="flex items-center space-x-4">
-              {session ? (
-                <Link
-                  href="/mis-cursos"
-                  className="text-blue-600 hover:text-blue-700 font-medium"
-                >
-                  Mis Cursos
-                </Link>
-              ) : (
-                <Link
-                  href="/login"
-                  className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200"
-                >
-                  Iniciar Sesión
-                </Link>
-              )}
-            </div>
+          <div className="flex items-center space-x-4">
+  <Link
+    href="/mis-cursos"
+    className="text-[#9810FA] hover:text-[#7e0ccf] font-medium"
+  >
+    Mis Cursos
+  </Link>
+</div>
+
           </div>
         </div>
       </div>
@@ -109,7 +101,7 @@ export default async function CourseDetailPage({
             </h1>
 
             <div className="flex items-center justify-between mb-6">
-              <div className="text-3xl font-bold text-blue-600">
+              <div className="text-3xl font-bold text-[#E12AFB]">
                 ${course.price}
               </div>
               <div className="text-gray-600">
@@ -164,11 +156,11 @@ export default async function CourseDetailPage({
                   </Link>
                 </div>
               ) : session ? (
-                <div className="bg-blue-50 rounded-lg p-6 text-center">
-                  <h3 className="text-lg font-semibold text-blue-800 mb-2">
+                <div className="bg-[#f3e5ff] rounded-lg p-6 text-center">
+                  <h3 className="text-lg font-semibold text-[#7e0ccf] mb-2">
                     ¿Te interesa este curso?
                   </h3>
-                  <p className="text-blue-700 mb-4">
+                  <p className="text-[#9810FA] mb-4">
                     Contacta a la diseñadora para coordinar el pago y obtener acceso
                   </p>
                   <PurchaseModal
@@ -186,7 +178,7 @@ export default async function CourseDetailPage({
                   </p>
                   <Link
                     href="/login"
-                    className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-lg transition-colors duration-200"
+                    className="inline-block bg-[#9810FA] hover:bg-[#7e0ccf] text-white font-medium py-3 px-8 rounded-lg transition-colors duration-200"
                   >
                     Iniciar Sesión para Comprar
                   </Link>

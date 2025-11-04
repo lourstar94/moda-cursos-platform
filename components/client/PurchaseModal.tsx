@@ -31,12 +31,13 @@ export default function PurchaseModal({ course, user }: PurchaseModalProps) {
 
   return (
     <>
-      <button
-        onClick={() => setIsOpen(true)}
-        className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-lg transition-colors duration-200"
-      >
-        Comprar Curso
-      </button>
+    <button
+  onClick={() => setIsOpen(true)}
+  className="inline-block bg-[#9810FA] hover:bg-[#7e0ccf] text-white font-medium py-3 px-8 rounded-lg transition-colors duration-200"
+>
+  Comprar Curso
+</button>
+
 
       {isOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
