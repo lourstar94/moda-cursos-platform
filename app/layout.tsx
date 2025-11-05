@@ -11,7 +11,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Plataforma de Cursos de Moda',
+  title: 'DeLuAtelier',
   description: 'Cursos exclusivos de diseño de ropa por diseñadoras profesionales',
   manifest: '/manifest.json',
   icons: {
