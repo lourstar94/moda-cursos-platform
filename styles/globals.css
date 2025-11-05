@@ -197,3 +197,16 @@ body {
     gap: 1rem !important;
   }
 }
+
+/* Agregar a globals.css */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 1rem;
+  }
+  
+  .hero-buttons {
+    gap: 1rem;
+    flex-direction: column;
+  }
+}
+
