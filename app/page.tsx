@@ -1,8 +1,10 @@
+// app/page.tsx - VERSIÓN ACTUALIZADA
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
-import { Video, Scissors, Sparkles, ArrowRight } from 'lucide-react';
+import { Video, Scissors, Sparkles, ArrowRight, Download } from 'lucide-react';
+import PWAInstallButton from '@/components/PWAInstallButton';
 
 export default async function HomePage() {
   const session = await getServerSession(authOptions);
@@ -92,7 +94,6 @@ export default async function HomePage() {
 
       {/* SECCIÓN FINAL / LLAMADO */}
       <section className="py-24 bg-white text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/fabric-pattern.png')] bg-cover opacity-5" />
         <div className="relative max-w-4xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Empieza hoy a construir tu marca personal
@@ -101,6 +102,8 @@ export default async function HomePage() {
             Únete a cientos de diseñadores que ya están creando moda con
             propósito y estilo.
           </p>
+          
+          {/* BOTÓN PRINCIPAL */}
           <Link
             href="/register"
             className="bg-[#9810FA] hover:bg-[#7e0ccf] text-white px-10 py-4 rounded-full text-lg font-semibold shadow-lg hover:scale-105 transition-transform inline-flex items-center"
@@ -108,6 +111,17 @@ export default async function HomePage() {
             Inscribirme Ahora
             <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
+
+          {/* NUEVO BOTÓN PWA */}
+          <div className="mt-6">
+            <PWAInstallButton 
+              variant="outline"
+              className="bg-white border border-[#9810FA] text-[#9810FA] hover:bg-[#faf5ff] px-8 py-3 rounded-full font-semibold shadow-md transition-transform hover:scale-105"
+            >
+              <Download className="mr-2 h-5 w-5" />
+              Instalar App
+            </PWAInstallButton>
+          </div>
         </div>
       </section>
 
