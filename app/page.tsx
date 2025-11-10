@@ -18,7 +18,7 @@ export default async function HomePage() {
     <div className="min-h-screen bg-gradient-to-b from-white to-[#faf5ff] text-gray-900">
       {/* HERO */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/hero-background.png')] bg-cover bg-center opacity-20" />
+        <div className="absolute inset-0 bg-[url('/images/elegido.jpg')] bg-cover bg-center opacity-20" />
         <div className="relative max-w-7xl mx-auto px-6 py-32 text-center">
           <h1 className="text-5xl md:text-7xl font-extrabold leading-tight">
             Diseña tu Futuro en{' '}
