@@ -1,0 +1,98 @@
+// prisma/schema.prisma - VERSIÓN COMPLETA CORREGIDA
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  password  String
+  role      UserRole @default(CLIENT)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relaciones
+  coursesAccessed UserCourseAccess[]
+  videoProgress   UserVideoProgress[] // ✅ RELACIÓN AGREGADA
+
+  @@map("users")
+}
+
+model Course {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  price       Float
+  image       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relaciones
+  videos      Video[]
+  accessList  UserCourseAccess[]
+
+  @@map("courses")
+}
+
+model Video {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  url         String
+  duration    Int?
+  order       Int
+  courseId    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relaciones
+  course      Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  progress    UserVideoProgress[] // ✅ RELACIÓN AGREGADA
+
+  @@map("videos")
+}
+
+model UserCourseAccess {
+  id        String   @id @default(cuid())
+  userId    String
+  courseId  String
+  isActive  Boolean  @default(false)
+  expiresAt DateTime? // ✅ NUEVO CAMPO: Fecha de expiración (null = ilimitado)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relaciones
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, courseId])
+  @@map("user_course_access")
+}
+
+model UserVideoProgress {
+  id        String   @id @default(cuid())
+  userId    String
+  videoId   String
+  progress  Float    @default(0)
+  completed Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relaciones
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  video Video @relation(fields: [videoId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, videoId])
+  @@map("user_video_progress")
+}
+
+enum UserRole {
+  ADMIN
+  CLIENT
+}
